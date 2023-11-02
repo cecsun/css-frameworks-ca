@@ -1,3 +1,13 @@
 @import "variables";
 @import "../../node_modules/bootstrap/scss/bootstrap";
 // @import "../../node_modules/bootstrap/scss/functions";
+
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 30px;
+}
+

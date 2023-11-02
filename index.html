@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="src/scss/_variables.scss">
+    <!-- <link rel="stylesheet" href="src/scss/_variables.scss"> -->
     <link rel="stylesheet" href="dist/css/index.css">
 </head>
 <body>
@@ -29,7 +29,7 @@
                 </div>
 
                 <div class="col-md-6 d-flex justify-content-center mt-3">
-                <form action="/profile" method="get">
+                <form action="profile.html" method="get">
                     <div class="form-group">
                         <label for="username"></label>
                         <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
@@ -41,26 +41,27 @@
                     <div class="text-center">
                         <button type="submit" class="btn btn-light my-3 text-uppercase">Login</button>
                     </div>
-                    <div class="text-center text-uppercase">
+                    <div class="text-center text-uppercase text-light">
                         <p>Or</p>
                     </div>
                     <div class="text-center my-3">
                         <a href="#"><img src="images/facebook.png" alt="facebook-icon" class="img m-2"></a>
                         <a href="#"><img src="images/google.png" alt="google-icon" class="img m-2"></a>
                     </div>
-                    <div class="text-center">
+                    <div class="text-center text-light">
                         <p>Don't have an account?</p>
-                        <a href="#" class="text-danger">Register here</a>
+                        <a href="#" class="text-light">Register here</a>
                     </div>
                 </form>
                 </div>
-
             </div>
         </div>
     </div>
 
     <div class="index-footer">
-        
+        <div class="bg-primary p-3 pt-5">
+            <p>&copy; Interior. All rights reserved.</p>
+        </div>
     </div>
 </body>
 </html>

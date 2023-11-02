@@ -2,8 +2,10 @@
 @import "../../node_modules/bootstrap/scss/bootstrap";
 // @import "../../node_modules/bootstrap/scss/functions";
 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
 * {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 16px;
 }
 

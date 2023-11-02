@@ -51,20 +51,16 @@
               <div class="col-md-6">
                 <form>
                     <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    <label for="inputTitle" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                     </div>
                     <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
-                    </div>
-                    <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    <label for="inputDescription" class="form-label">Description</label>
+                    <!-- <input type="text" class="form-control" id="inputDescription" style="height: 100px"> -->
+                    <textarea name="message" class="rounded" style="width:100%; height:100px;"></textarea> 
                     </div>
                     <button type="image" class="btn btn-light">Choose image</button>
-                    <button type="submit" class="btn btn-light text-uppercase">Submit</button>
+                    <button type="submit" class="btn btn-light text-uppercase float-end">Submit</button>
                 </form>
               </div>
               <div class="col-md-3"></div>
@@ -80,9 +76,9 @@
                     Sort By
                     </button>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#"></a></li>
-                      <li><a class="dropdown-item" href="#"></a></li>
-                      <li><a class="dropdown-item" href="#"></a></li>
+                      <li><a class="dropdown-item" href="#">Most popular</a></li>
+                      <li><a class="dropdown-item" href="#">Old to new</a></li>
+                      <li><a class="dropdown-item" href="#">New to old</a></li>
                     </ul>
                   </div>
               </div>
@@ -172,18 +168,14 @@
               </div>
               <div class="col-md-3"></div>
             </div>
-          </div>
-
-         
-
-          
+          </div>  
     </div>
     
-
     <div class="feed-footer">
         <div class="bg-secondary p-3 pt-5">
             <p>&copy; Interior. All rights reserved.</p>
         </div>
     </div>
+    
 </body>
 </html>

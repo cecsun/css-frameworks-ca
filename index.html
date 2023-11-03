@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The authentication page of Interior">
+    <link rel="icon" href="/images/favicon.png">
+    <title>Interior - Share your style</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="src/scss/_variables.scss"> -->
+    <link rel="stylesheet" href="dist/css/index.css">
+</head>
+<body>
+
+    <div class="index-header">
+        <nav class="navbar bg-primary">
+            <div class="container justify-content-center">
+            <a class="navbar-brand">
+                <img src="images/logo.png" alt="Logo" class="img-fluid">
+            </a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="index-main bg-primary py-5">
+        <div class="container bg-primary p-5">
+            <div class="row">
+                <div class="col-md-6 d-flex justify-content-center">
+                <img src="images/quote.png" alt="Quote" class="img-fluid">
+                </div>
+                <div class="col-md-6 d-flex justify-content-center mt-3">
+                <form action="profile.html" method="get">
+                    <div class="form-group">
+                        <label for="username"></label>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password"></label>
+                        <input type="password" class="form-control bg-light" id="password" name="password" placeholder="Password" required minlength="8">
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-light my-3 text-uppercase">Login</button>
+                    </div>
+                    <div class="text-center text-uppercase text-light">
+                        <p>Or</p>
+                    </div>
+                    <div class="text-center my-3">
+                        <a href="#"><img src="images/facebook.png" alt="facebook-icon" class="img m-2"></a>
+                        <a href="#"><img src="images/google.png" alt="google-icon" class="img m-2"></a>
+                    </div>
+                    <div class="text-center text-light">
+                        <p>Don't have an account?</p>
+                        <a href="#" class="text-light">Register here</a>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="index-footer">
+        <div class="bg-primary p-3 pt-5">
+            <p>&copy; Interior. All rights reserved.</p>
+        </div>
+    </div>
+
+</body>
+</html>

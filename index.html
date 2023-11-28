@@ -6,9 +6,10 @@
     <meta name="description" content="The authentication page of Interior">
     <link rel="icon" href="/images/favicon.png">
     <title>Interior - Share your style</title>
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
     <!-- <link rel="stylesheet" href="src/scss/_variables.scss"> -->
     <link rel="stylesheet" href="dist/css/index.css">
+    <script defer src="index.js"></script>
 </head>
 <body>
 
@@ -22,37 +23,53 @@
         </nav>
     </div>
 
-    <div class="index-main bg-primary py-5">
-        <div class="container bg-primary p-5">
-            <div class="row">
-                <div class="col-md-6 d-flex justify-content-center">
-                <img src="images/quote.png" alt="Quote" class="img-fluid">
+    <div class="index-main bg-primary">
+        <div class="container bg-primary justify-content-center">
+            <div class="row justify-content-center">
+                <div class="col-md-5 d-flex justify-content-center">
+                    <img src="images/quote.png" alt="Quote" class="img-fluid">
                 </div>
-                <div class="col-md-6 d-flex justify-content-center mt-3">
-                <form action="profile.html" method="get">
-                    <div class="form-group">
-                        <label for="username"></label>
-                        <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="password"></label>
-                        <input type="password" class="form-control bg-light" id="password" name="password" placeholder="Password" required minlength="8">
-                    </div>
-                    <div class="text-center">
-                        <button type="submit" class="btn btn-light my-3 text-uppercase">Login</button>
-                    </div>
-                    <div class="text-center text-uppercase text-light">
-                        <p>Or</p>
-                    </div>
-                    <div class="text-center my-3">
-                        <a href="#"><img src="images/facebook.png" alt="facebook-icon" class="img m-2"></a>
-                        <a href="#"><img src="images/google.png" alt="google-icon" class="img m-2"></a>
-                    </div>
-                    <div class="text-center text-light">
-                        <p>Don't have an account?</p>
-                        <a href="#" class="text-light">Register here</a>
-                    </div>
-                </form>
+                <div class="col-md-2 d-flex justify-content-center"></div>
+                <div class="col-md-5 d-flex justify-content-center mt-3 align-items-center">
+                    <form action="profile.html" method="get">
+                        <div class="form-group">
+                            <label for="username"></label>
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password"></label>
+                            <input type="password" class="form-control bg-light" id="password" name="password" placeholder="Password" required minlength="8">
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-light my-3 text-uppercase">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="container pt-5">
+            <div class="row justify-content-center">
+                <div class="text-center text-light text-decoration-underline">
+                    <p>Register here</p>
+                </div>
+                <div class="col-md-6 justify-content-center d-flex">
+                    <form action="profile.html" method="get">
+                        <div class="form-group">
+                            <label for="name"></label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email"></label>
+                            <input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password"></label>
+                            <input type="password" class="form-control bg-light" id="password" name="password" placeholder="Password" required minlength="8">
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-light my-3 text-uppercase">Submit</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

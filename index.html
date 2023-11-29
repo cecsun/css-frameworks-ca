@@ -9,7 +9,8 @@
     <!-- <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
     <!-- <link rel="stylesheet" href="src/scss/_variables.scss"> -->
     <link rel="stylesheet" href="dist/css/index.css">
-    <script defer src="index.js"></script>
+    <script defer src="/js/register.js"></script>
+    <script defer src="/js/login.js"></script>
 </head>
 <body>
 
@@ -31,17 +32,17 @@
                 </div>
                 <div class="col-md-2 d-flex justify-content-center"></div>
                 <div class="col-md-5 d-flex justify-content-center mt-3 align-items-center">
-                    <form action="profile.html" method="get">
+                    <form action="profile.html" method="get" name="login">
                         <div class="form-group">
                             <label for="username"></label>
-                            <input type="text" class="form-control" id="username" name="username" placeholder="Email" required>
+                            <input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
                         </div>
                         <div class="form-group">
                             <label for="password"></label>
                             <input type="password" class="form-control bg-light" id="password" name="password" placeholder="Password" required minlength="8">
                         </div>
                         <div class="text-center">
-                            <button type="submit" class="btn btn-light my-3 text-uppercase">Login</button>
+                            <button type="submit" class="btn btn-light my-3 text-uppercase submit-login-form">Login</button>
                         </div>
                     </form>
                 </div>
@@ -53,7 +54,7 @@
                     <p>Register here</p>
                 </div>
                 <div class="col-md-6 justify-content-center d-flex">
-                    <form action="profile.html" method="get">
+                    <form action="profile.html" method="get" name="create-profile">
                         <div class="form-group">
                             <label for="name"></label>
                             <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
@@ -67,7 +68,7 @@
                             <input type="password" class="form-control bg-light" id="password" name="password" placeholder="Password" required minlength="8">
                         </div>
                         <div class="text-center">
-                            <button type="submit" class="btn btn-light my-3 text-uppercase">Submit</button>
+                            <button type="submit" class="btn btn-light my-3 text-uppercase submit-create-profile-form">Submit</button>
                         </div>
                     </form>
                 </div>

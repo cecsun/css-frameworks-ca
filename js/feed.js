@@ -45,6 +45,9 @@ async function fetchWithToken(url) {
             img.src = media;
             let username = post.querySelector("label");
             username.innerHTML = title;
+            let a = post.querySelector("a");
+            a.href = "post.html?id=" + element.id;
+
             // post.style.display = "unset";
             viewPosts.appendChild(post);
         }

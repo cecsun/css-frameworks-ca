@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The feed page of Interior">
+    <link rel="icon" href="/images/favicon.png">
+    <title>Interior - Share your style</title>
+    <!-- <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="src/scss/_variables.scss"> -->
+    <link rel="stylesheet" href="dist/css/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script defer src="/js/getPostByID.js"></script>
+</head>
+<body>
+
+    <div class="feed-header">
+        <nav class="navbar navbar-expand bg-secondary">
+            <div class="container-fluid">
+                <ul class="navbar-nav me-auto mb-2">
+                  <li class="nav-item">
+                    <a class="nav-link text-light" href="profile.html">Profile</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-light" href="feed.html">Feed</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-light" href="index.html">Sign Out</a>
+                  </li>
+                </ul>
+                    <div class="d-none d-sm-block">
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-light" type="submit">Search</button>
+                        </form>
+                    </div>
+            </div>
+        </nav>
+        <div class="container d-sm-none ps-3 pb-3 bg-secondary">
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-light" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="feed-main bg-secondary">
+        <!-- <div class="text-center pt-5 pb-3 text-light text-uppercase">
+            <h1>New post</h1>
+        </div>
+        <div class="container pb-5">
+            <div class="row">
+              <div class="col-md-3"></div>
+              <div class="col-md-6">
+                <form>
+                    <div class="mb-3">
+                    <label for="inputTitle" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                    <label for="inputDescription" class="form-label">Description</label>
+                    <textarea name="message" class="rounded" style="width:100%; height:100px;"></textarea> 
+                    </div>
+                    <button type="image" class="btn btn-light">Choose image</button>
+                    <button type="submit" class="btn btn-light text-uppercase float-end">Submit</button>
+                </form>
+              </div>
+              <div class="col-md-3"></div>
+            </div>
+          </div> -->
+
+
+          <div class="feed-posts">
+            <div class="container my-4">
+              <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6 d-flex justify-content-center">
+                  <div class="mb-3" id="postWrapper">
+                  </div>
+                </div>
+                <div class="col-md-3"></div>
+              </div>
+            </div>
+          </div>
+    </div>
+    
+    <div class="feed-footer">
+        <div class="bg-secondary p-3 pt-5">
+            <p>&copy; Interior. All rights reserved.</p>
+        </div>
+    </div>
+
+</body>
+</html>

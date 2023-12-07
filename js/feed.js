@@ -1,19 +1,8 @@
+import { generateFeedPostHtml } from "./generatePostHtml.js";
+
 const API_BASE_URL = 'https://api.noroff.dev';
 
-// const json = response.json();
-// console.log(json);
-
 const viewPosts = document.querySelector(".feed-posts");
-
-
-// json.forEach((postData) => {
-//     let postElement = postTemplate.cloneNode(true);
-
-//     postElement.querySelector(".form-label").innerText = postData.title;
-//     postElement.querySelector(".img-thumbnail").innerText = postData.media;
-
-//     viewPosts.appendChild(postElement);
-// });
 
 async function fetchWithToken(url) {
     try {
@@ -34,39 +23,49 @@ async function fetchWithToken(url) {
 
         for (let i = 0; i < json.length; i++) {
             let element = json[i];
-            let media = element.media;
-            if (media == null || media == "") {
-                continue;
-            }
-            let title = element.title;
-            const postTemplate = document.querySelector(".post-template");
-            let post = postTemplate.cloneNode(true);
-            let img = post.querySelector("img");
-            img.src = media;
-            let username = post.querySelector("label");
-            username.innerHTML = title;
-            let a = post.querySelector("a");
-            a.href = "post.html?id=" + element.id;
+            const postWrapper = generateFeedPostHtml(element);
+            
 
-            // post.style.display = "unset";
-            viewPosts.appendChild(post);
+            viewPosts.appendChild(postWrapper);
         }
 
-    
-
-        
-
-
-        // const postMedia = post.querySelector(".img-thumbnail");
-        // let media = postMedia.cloneNode(true);
-
-
-        
-        viewPosts.appendChild(post);
+        // viewPosts.appendChild(post);
 
     } catch (error) {
         console.log(error);
     }
 }
+
 fetchWithToken(API_BASE_URL + '/api/v1/social/posts');
-  
+
+// let posts = [];
+// const searchInput = document.querySelector('#search-input');
+
+// searchInput.addEventListener('input', () => {
+//     displayPosts(posts, filterPostsHandler);
+// });
+
+// function filterPostsHandler( post, index ) {
+//     if (post.title.toLowerCase().startsWith(searchInput.value.toLowerCase().trim())) {
+//         return true;
+//     }
+// }
+
+// // const postsContainer = document.querySelector('#posts-display');
+
+// // function sortCallback(a, b) {
+// //     if (a.title < b.title) {
+// //         return -1;
+// //     } else if (a.title > b.title) {
+// //         return 1;
+// //     } 
+// //     return 0;
+// // }
+
+// async function displayPosts(posts, filterCallback) {
+//     postsContainer.textContent = '';
+//     posts.filter(filterCallback).sort(sortCallback).forEach((post) => {
+//             const currentPost = generatePostHtml(post);
+//             postsContainer.appendChild(currentPost);
+//         });
+// }

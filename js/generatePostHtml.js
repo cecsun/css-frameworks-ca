@@ -2,7 +2,7 @@ export function generatePostHtml(post, addAnchor=false) {
     const { title, body, media, id } = post;
 
     const img = document.createElement('img');
-    img.src = media;
+    img.src = media.length ? media : "./images/post1.jpg";
     img.classList.add("img-thumbnail");
     img.alt = "Post";
 

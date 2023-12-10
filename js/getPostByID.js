@@ -37,6 +37,12 @@ async function main() {
     const post = await fetchById(id);
     console.log(post);
     let postWrapper = document.getElementById('postWrapper');
+    if (shouldEdit) {
+        const p = document.createElement("p");
+        p.innerHTML = "Should Edit me now ";
+        postWrapper.appendChild(p);
+        return;
+    }
     label.for = post.title;
     label.classList.add("form-label");
     label.innerHTML = post.title;
@@ -45,11 +51,7 @@ async function main() {
     img.alt = "Post";
     postWrapper.appendChild(label);
     postWrapper.appendChild(img);
-    if (shouldEdit) {
-        const p = document.createElement("p");
-        p.innerHTML = "Should Edit me now ";
-        postWrapper.appendChild(p);
-    }
+
 }
 
 main();

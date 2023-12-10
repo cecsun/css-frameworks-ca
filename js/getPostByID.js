@@ -21,8 +21,10 @@ async function fetchById(id) {
 function getIdParam() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    const id = urlParams.get("id");
-    return id;
+    return {
+        id: urlParams.get("id"),
+        edit: urlParams.get("edit")
+    };
 }
 
 let label = document.createElement('label');
@@ -30,7 +32,8 @@ let img = document.createElement('img');
 
 
 async function main() {
-    const id = getIdParam();
+    const {id, edit}= getIdParam();
+    const shouldEdit = edit === "1"; 
     const post = await fetchById(id);
     console.log(post);
     let postWrapper = document.getElementById('postWrapper');
@@ -42,6 +45,11 @@ async function main() {
     img.alt = "Post";
     postWrapper.appendChild(label);
     postWrapper.appendChild(img);
+    if (shouldEdit) {
+        const p = document.createElement("p");
+        p.innerHTML = "Should Edit me now ";
+        postWrapper.appendChild(p);
+    }
 }
 
 main();

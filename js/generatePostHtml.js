@@ -2,7 +2,7 @@ export function generatePostHtml(post, addAnchor=false) {
     const { title, body, media, id } = post;
 
     const img = document.createElement('img');
-    img.src = media.length ? media : "./images/post1.jpg";
+    img.src = media && media.length ? media : "./images/post1.jpg";
     img.classList.add("img-thumbnail");
     img.alt = "Post";
 
@@ -53,17 +53,3 @@ export function generateFeedPostHtml(post) {
 
     return container;
 }
-
-
-{/* <div class="container my-4 post-template">
-    <div class="row">
-        <div class="col-md-3"></div>
-            <div class="col-md-6 d-flex justify-content-center">
-                <div class="mb-3">
-                    <label for="username" class="form-label"><i class="bi bi-person-circle"></i>Username</label>
-                    <a href=""><img src="" class="img-thumbnail" alt="post"></a>
-                </div>
-            </div>
-        <div class="col-md-3"></div>
-    </div>
-</div> */}

@@ -4,8 +4,8 @@ const API_BASE_URL = 'https://api.noroff.dev';
 
 const viewPosts = document.querySelector(".feed-posts");
 
-const searchFormSbumit = document.querySelector("#search-submit")
-searchFormSbumit.addEventListener("click", async (event) => {
+const searchFormSubmit = document.querySelector("#search-submit")
+searchFormSubmit.addEventListener("click", async (event) => {
     event.preventDefault();
     const search = document.forms["search-form"]["search"].value;
     console.log(search);

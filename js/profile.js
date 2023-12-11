@@ -20,7 +20,7 @@ function createProfilePost(post) {
     const { title, media, id } = post;
 
     const img = document.createElement("img");
-    img.src = media.length ? media : "images/post2.jpg";
+    img.src = media && media.length ? media : "images/post2.jpg";
     img.classList.add("img-thumbnail")
     img.alt = "post";
 

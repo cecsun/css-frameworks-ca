@@ -9,9 +9,6 @@ const searchFormSubmit = document.querySelector("#search-submit")
 searchFormSubmit.addEventListener("click", async (event) => {
     event.preventDefault();
     const search = document.forms["search-form"]["search"].value;
-    console.log(search);
-    console.log(postDatas);
-
     // Clear previous posts displayed on page 
     viewPosts.innerHTML = "";
 
@@ -24,17 +21,32 @@ searchFormSubmit.addEventListener("click", async (event) => {
     for (const post of postDataFilteredSorted) {
         viewPosts.appendChild(generateFeedPostHtml(post));
     }
-
 });
 
-let sortOrderDescending = true;
 
-// add dropdown even listener here 
-// 1. Toggle sort order. sortOrderDescending = !sortOrderDescending
-// 2. Clear previous posts.
-// 3. Sort in the same way as above.
-// 4. add html for sorted list of posts.
-// 5. Change inner html of button based on next order if pressed.
+const sortNewButton = document.getElementById("sort-new");
+sortNewButton.addEventListener("click", async (event) => {
+    event.preventDefault();
+    viewPosts.innerHTML = "";
+    const postDataSorted = postDatas.sort((postA, postB) => {
+        return postA.created < postB.created;
+    });
+    for (const post of postDataSorted) {
+        viewPosts.appendChild(generateFeedPostHtml(post));
+    }
+});
+
+const sortOldButton = document.getElementById("sort-old");
+sortOldButton.addEventListener("click", async (event) => {
+    event.preventDefault();
+    viewPosts.innerHTML = "";
+    const postDataSorted = postDatas.sort((postA, postB) => {
+        return postA.created > postB.created;
+    });
+    for (const post of postDataSorted) {
+        viewPosts.appendChild(generateFeedPostHtml(post));
+    }
+});
 
 let postDatas = undefined;
 

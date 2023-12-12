@@ -1,31 +1,29 @@
-export function generatePostHtml(post, addAnchor=false) {
-    const { title, body, media, id } = post;
+export function generatePostHtml(post) {
+    const { title, body, media, id, created } = post;
+    const createdDatetime = new Date(created);
 
     const img = document.createElement('img');
-    img.src = media && media.length ? media : "./images/post1.jpg";
+    img.src = media && media.length ? media : "./images/post2.jpg";
     img.classList.add("img-thumbnail");
     img.alt = "Post";
 
     const label = document.createElement('label');
     label.classList.add("form-label");
-    label.innerHTML = title;
+    label.innerHTML = title + " - " + `${createdDatetime.getFullYear()}/${createdDatetime.getMonth()+1}/${createdDatetime.getDate()}`;
 
     const postWrapper = document.createElement("div");
     postWrapper.appendChild(label);
-    if (addAnchor) {
-        const a = document.createElement("a");
-        a.href = "post.html?id=" + id;
-        a.appendChild(img);
-        postWrapper.appendChild(a);
-    } else {
-        postWrapper.appendChild(img);
-    }
+    const a = document.createElement("a");
+    a.href = "post.html?id=" + id;
+    a.appendChild(img);
+    postWrapper.appendChild(a);
+
     return postWrapper;
 }
 
 
 export function generateFeedPostHtml(post) {
-    const postWrapper = generatePostHtml(post, true);
+    const postWrapper = generatePostHtml(post);
     postWrapper.classList.add("mb-3");
 
     const columnCenter = document.createElement("div");

@@ -39,14 +39,25 @@ function createProfilePost(post) {
 
     div.appendChild(a)
 
-    const editButton = document.createElement("h1");
-    editButton.innerHTML = "Edit";
-    const aEditButton = document.createElement("a");
-    aEditButton.href = `post.html?id=${id}&edit=1`;
-    aEditButton.appendChild(editButton);
-    div.appendChild(aEditButton);
+    const buttonContainer = document.createElement("div");
 
-    // <button type="submit" class="btn btn-light text-uppercase float-end" id="submit-edit-post-form">Update</button>
+    buttonContainer.style.display = "flex";
+    buttonContainer.style.justifyContent = "space-between";
+    const editButton = document.createElement("button");
+    editButton.type = "submit";
+    editButton.classList.add("btn");
+    editButton.classList.add("btn-light");
+    editButton.classList.add("text-uppercase");
+    editButton.classList.add("float-end");
+    editButton.id = "submit-edit-post";
+    editButton.innerHTML = "Edit";
+    editButton.addEventListener("click", async (event) => {
+        event.preventDefault();
+        window.location = `post.html?id=${id}&edit=1`;
+    });
+
+    buttonContainer.appendChild(editButton);
+
     const deleteButton = document.createElement("button");
     deleteButton.type = "submit";
     deleteButton.classList.add("btn");
@@ -62,7 +73,8 @@ function createProfilePost(post) {
         location.reload();
     });
 
-    div.appendChild(deleteButton);
+    buttonContainer.appendChild(deleteButton);
+    div.appendChild(buttonContainer);
     container.appendChild(div);
 }
 

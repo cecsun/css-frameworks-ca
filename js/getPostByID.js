@@ -76,7 +76,7 @@ async function main() {
     label.for = title;
     label.classList.add("form-label");
     label.innerHTML = title;
-    img.src = media;
+    img.src = media && media.length ? media : "/images/post2.jpg";
     img.classList.add("img-thumbnail");
     img.alt = "Post";
     postWrapper.appendChild(label);

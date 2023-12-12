@@ -10,7 +10,7 @@
     <!-- <link rel="stylesheet" href="src/scss/_variables.scss"> -->
     <link rel="stylesheet" href="dist/css/index.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <script defer src="/js/getPostByID.js"></script>
+    <script type="module" src="/js/getPostByID.js"></script>
 </head>
 <body class="bg-secondary">
 
@@ -69,7 +69,6 @@
             </div>
           </div> -->
 
-
           <div class="feed-posts">
             <div class="container my-4">
               <div class="row">
@@ -82,6 +81,31 @@
               </div>
             </div>
           </div>
+           <div id="edit-form-container" class="container pb-5">
+            <div class="row">
+              <div class="col-md-3"></div>
+              <div class="col-md-6">
+                <form id="edit-post-form" style="display: none;">
+                    <div class="mb-3">
+                      <label for="inputTitle" class="form-label">Title</label>
+                      <input type="text" class="form-control" id="inputTitle" required/>
+                    </div>
+                    <div class="mb-3">
+                      <label for="inputDescription" class="form-label">Description</label>
+                      <textarea id="inputDescription" class="form-control rounded" style="width:100%; height:100px;" required></textarea> 
+                    </div>
+                    <div class="mb-3">
+                      <label for="inputMedia" class="form-label">Media URL</label>
+                      <input type="url" class="form-control" id="inputMedia" required>
+                    </div>
+                    <button type="submit" class="btn btn-light text-uppercase float-end" id="submit-edit-post-form">Update</button>
+                </form>
+              </div>
+              <div class="col-md-3"></div>
+            </div>
+          </div>
+
+
     </div>
     
     <div class="feed-footer">

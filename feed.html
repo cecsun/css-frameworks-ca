@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <script type="module" src="/js/generatePostHtml.js"></script>
     <script type="module" src="/js/feed.js"></script>
-    <!-- <script type="module" src="/js/create.js"></script> -->
+    <script type="module" src="/js/create.js"></script>
 </head>
 <body class="bg-secondary">
 
@@ -55,7 +55,7 @@
             <div class="row">
               <div class="col-md-3"></div>
               <div class="col-md-6">
-                <form id="newPost">
+                <form id="new-post-form">
                     <div class="mb-3">
                       <label for="inputTitle" class="form-label">Title</label>
                       <input type="text" class="form-control" id="inputTitle" required>
@@ -68,7 +68,7 @@
                       <label for="inputMedia" class="form-label">Media URL</label>
                       <input type="url" class="form-control" id="inputMedia" required>
                     </div>
-                    <button type="submit" class="btn btn-light text-uppercase float-end">Submit</button>
+                    <button type="submit" class="btn btn-light text-uppercase float-end" id="submit-new-post-form">Submit</button>
                 </form>
               </div>
               <div class="col-md-3"></div>

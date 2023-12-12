@@ -1,5 +1,6 @@
 import { generateFeedPostHtml } from "./generatePostHtml.js";
 import { fetchWithToken } from "./fetchWitchToken.js";
+// import { handleAddPost } from "./create.js";
 const API_BASE_URL = 'https://api.noroff.dev';
 
 const viewPosts = document.querySelector(".feed-posts");
@@ -38,7 +39,7 @@ let sortOrderDescending = true;
 let postDatas = undefined;
 
 async function main() {
-    postDatas = await fetchWithToken(API_BASE_URL + '/api/v1/social/posts?_author=true');
+    postDatas = await fetchWithToken(API_BASE_URL + '/api/v1/social/posts?_author=true', {method: "GET"});
     console.log(postDatas)
     for (const post of postDatas) {
         const postWrapper = generateFeedPostHtml(post);

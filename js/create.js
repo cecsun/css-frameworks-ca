@@ -1,29 +1,25 @@
-import { fetchWithToken } from "./fetchWitchToken";
+import { fetchWithToken } from "./fetchWitchToken.js";
 
-const POSTS_API_URL = `${BASE_API_URL}/social/posts`;
+const submitNewPostForm = document.querySelector('#submit-new-post-form');
 
-const addPostForm = document.querySelector('#newPost');
-
-const title = document.querySelector('#inputTitle');
-const body = document.querySelector('#inputDescription');
-// const media = document.querySelector('#inputMedia');
-
-async function handleAddPost() {
+export async function handleAddPost() {
+    const BASE_API_URL = 'https://api.noroff.dev';
+    const POSTS_API_URL = `${BASE_API_URL}/api/v1/social/posts`;
     const post = {
-        title: inputTitle.value,
-        body: inputDescription.value,
+        title: document.forms["new-post-form"]["inputTitle"].value,
+        body: document.forms["new-post-form"]["inputDescription"].value,
+        media: document.forms["new-post-form"]["inputMedia"].value,
+        tags: [localStorage.getItem("email")],
     }
     const response = await fetchWithToken(
         POSTS_API_URL, 
         { method: 'POST', body: JSON.stringify(post) }, 
-        true,
     );
     console.log(response);
 }
 
-addPostForm.addEventListener('submit', async (event) => {
+submitNewPostForm.addEventListener('click', async (event) => {
     event.preventDefault();
-    handleAddPost();
+    await handleAddPost();
+    location.reload();
 });
-
-export { handleAddPost };

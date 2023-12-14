@@ -19,11 +19,12 @@ export async function handleAddPost() {
         POSTS_API_URL, 
         { method: 'POST', body: JSON.stringify(post) }, 
     );
-    console.log(response);
+    return response;
 }
 
 submitNewPostForm.addEventListener('click', async (event) => {
     event.preventDefault();
-    await handleAddPost();
+    const response = await handleAddPost();
     location.reload();
+    console.log(response);
 });

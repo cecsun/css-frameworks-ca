@@ -1,6 +1,12 @@
 import { fetchWithToken } from "./fetchWitchToken.js";
 const API_BASE_URL = 'https://api.noroff.dev';
 
+/**
+ * Displays a post content item by ID
+ * @param {number} id 
+ * @returns 
+ */
+
 async function fetchById(id) {
     const token = localStorage.getItem('accessToken');
     const getData = {
@@ -53,6 +59,10 @@ submitEditFormPost.addEventListener("click", async (event) => {
     console.log(response);
     location.reload();
 });
+
+/**
+ * Update a post on your profile
+ */
 
 async function main() {
     const {id, edit}= getIdParam();

@@ -50,6 +50,10 @@ sortOldButton.addEventListener("click", async (event) => {
 
 let postDatas = undefined;
 
+/**
+ * 
+ */
+
 async function main() {
     postDatas = await fetchWithToken(API_BASE_URL + '/api/v1/social/posts?_author=true', {method: "GET"});
     console.log(postDatas)

@@ -1,3 +1,9 @@
+/**
+ * 
+ * @param {*} url 
+ * @param {*} options  
+ */
+
 export async function fetchWithToken(url, options) {
     try {
         const token = localStorage.getItem('accessToken');

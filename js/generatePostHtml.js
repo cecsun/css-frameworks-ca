@@ -1,3 +1,9 @@
+/**
+ * Displays the post with a title, date and image
+ * @param {*} post 
+ * @returns 
+ */
+
 export function generatePostHtml(post) {
     const { title, body, media, id, created } = post;
     const createdDatetime = new Date(created);
@@ -21,6 +27,11 @@ export function generatePostHtml(post) {
     return postWrapper;
 }
 
+/**
+ * 
+ * @param {*} post 
+ * @returns 
+ */
 
 export function generateFeedPostHtml(post) {
     const postWrapper = generatePostHtml(post);

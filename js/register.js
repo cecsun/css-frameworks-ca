@@ -32,6 +32,13 @@ submitCreateProfileForm.addEventListener("click", async (event) => {
   return true;
 }, true);
 
+/**
+ * Register user
+ * @param {*} url 
+ * @param {*} data 
+ * @returns 
+ */
+
 async function registerUser(url, data) {
   try {
     const postData = {
@@ -43,15 +50,16 @@ async function registerUser(url, data) {
     };
 
     const response = await fetch(url, postData);
-    // console.log(response);
     const json = await response.json();
-    // console.log(json);
     return json;
   } catch (error) {
     console.log(error);
   }
 }
 
+/**
+ * Validation of name, email and password for a user to register
+ */
 
 function validateCreateProfileForm() {
   let x = document.forms["create-profile"]["name"].value;
@@ -59,7 +67,7 @@ function validateCreateProfileForm() {
     alert("Username must be more than 5 characters");
     return false;
   }
-  " cecsun"
+  "cecsun"
 
   if (x.split(" ").length >= 2) {
     alert("Username cannot contain spaces ");
@@ -85,10 +93,22 @@ function validateCreateProfileForm() {
   return true;
 }
 
+/**
+ * The registered email cannot contain certain symbols
+ * @param {string} email 
+ * @returns 
+ */
+
 function validateEmail(email) {
   const regex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
   return regex.test(email);
 }
+
+/**
+ * The user needs to have a stud.noroff.no/noroff.no email
+ * @param {string} email 
+ * @returns 
+ */
 
 function validateNoroffEmail(email) {
   const validEmailDomains = ["stud.noroff.no", "noroff.no"];
@@ -101,11 +121,3 @@ function validateNoroffEmail(email) {
   }
   return false;
 }
-
-// const user = {
-//   name: 'test_account_a',
-//   email: 'test-account-a@noroff.no',
-//   password: 'my-password',
-// };
-
-// registerUser(`${API_BASE_URL}/api/v1/social/auth/register`, user);

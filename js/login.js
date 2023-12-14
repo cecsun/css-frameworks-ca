@@ -19,16 +19,15 @@ submitLoginForm.addEventListener("click", async (event) => {
         return false;
     }
     window.location.href = `profile.html?name=${response.email}&email=${response.email}`;
-    console.log(response); 
 }, true);
 
 /**
- * Use of JWT for authenticate users when logging in
- * @param {*} url 
- * @param {*} data 
- * @returns 
+ * Log in user with provided credentials authenticate 
+ * Stores JWT access token, user email and name. 
+ * @param {string} url 
+ * @param {object} data 
+ * @returns login request response/error
  */
-
 async function loginUser(url, data) {
     try {
         const postData = {
@@ -46,12 +45,12 @@ async function loginUser(url, data) {
         localStorage.setItem('name', json.name);
         return json;
     } catch (error) {
-        console.log(error);
+        return error;
     }
 }
 
 /**
- * Validation of email and password then logging in
+ * Validates email and password in login form.
  */
 
 function validateLoginForm() {

@@ -1,7 +1,7 @@
 /**
- * Displays the post with a title, date and image
- * @param {*} post 
- * @returns 
+ * Generates html for a post with title, date and image
+ * @param {object} post 
+ * @returns HTML node containing the post
  */
 
 export function generatePostHtml(post) {
@@ -28,9 +28,9 @@ export function generatePostHtml(post) {
 }
 
 /**
- * 
- * @param {*} post 
- * @returns 
+ * Generates a html for a post for adding to feed.
+ * @param {object} post 
+ * @returns feed html node containing the post. 
  */
 
 export function generateFeedPostHtml(post) {

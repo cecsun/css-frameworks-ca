@@ -1,7 +1,7 @@
 /**
- * 
- * @param {*} url 
- * @param {*} options  
+ * Fetches with token
+ * @param {string} url 
+ * @param {object} options  
  */
 
 export async function fetchWithToken(url, options) {

@@ -3,10 +3,10 @@ import { fetchWithToken } from "./fetchWitchToken.js";
 const submitNewPostForm = document.querySelector('#submit-new-post-form');
 
 /**
- * A form where you can create a new post
+ * Creates and performs post request based on data of new post form
+ * @returns the request response
  */
-
-export async function handleAddPost() {
+async function createPostRequest() {
     const BASE_API_URL = 'https://api.noroff.dev';
     const POSTS_API_URL = `${BASE_API_URL}/api/v1/social/posts`;
     const post = {
@@ -24,7 +24,6 @@ export async function handleAddPost() {
 
 submitNewPostForm.addEventListener('click', async (event) => {
     event.preventDefault();
-    const response = await handleAddPost();
+    const response = await createPostRequest();
     location.reload();
-    console.log(response);
 });

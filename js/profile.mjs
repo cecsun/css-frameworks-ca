@@ -3,7 +3,6 @@ import { fetchWithToken } from "./fetchWitchToken.js";
 /**
  * Displays the posts on the profile page of the logged in user
  */
-
 async function main() {
 
     const email = localStorage.getItem('email');
@@ -25,10 +24,9 @@ async function main() {
 const container = document.querySelector("#post-container");
 
 /**
- * The user can create a post, and also edit and delete the post on their profile page
- * @param {*} post 
+ * Creates a post with edit and delete options on profile page
+ * @param {object} post 
  */
-
 function createProfilePost(post) {
     const { title, media, id } = post;
 

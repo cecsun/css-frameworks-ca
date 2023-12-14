@@ -51,15 +51,14 @@ sortOldButton.addEventListener("click", async (event) => {
 let postDatas = undefined;
 
 /**
- * 
+ * Fetches all posts (with author), creates html for each post and adds it to the DOM. 
  */
-
 async function main() {
     postDatas = await fetchWithToken(API_BASE_URL + '/api/v1/social/posts?_author=true', {method: "GET"});
     console.log(postDatas)
     for (const post of postDatas) {
-        const postWrapper = generateFeedPostHtml(post);
-        viewPosts.appendChild(postWrapper);
+        const postHTML = generateFeedPostHtml(post);
+        viewPosts.appendChild(postHTML);
     }
 }
 

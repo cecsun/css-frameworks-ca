@@ -2,9 +2,9 @@ import { fetchWithToken } from "./fetchWitchToken.js";
 const API_BASE_URL = 'https://api.noroff.dev';
 
 /**
- * Displays a post content item by ID
+ * Retrieves post content item by ID
  * @param {number} id 
- * @returns 
+ * @returns post data for the given ID. 
  */
 
 async function fetchById(id) {
@@ -21,11 +21,15 @@ async function fetchById(id) {
         let json = await response.json();
         return json;
     } catch (error) {
-        console.log(error);
+        return error;
     }
 }
 
-function getIdParam() {
+/**
+ * Gets the query parameter values for ID and edit
+ * @returns ID and edit query values
+ */
+function getQueryParams() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     return {
@@ -42,7 +46,7 @@ const editPostForm = document.getElementById("edit-post-form");
 
 const submitEditFormPost = document.getElementById("submit-edit-post-form");
 submitEditFormPost.addEventListener("click", async (event) => {
-    const {id} = getIdParam();
+    const {id} = getQueryParams();
     event.preventDefault();
     const BASE_API_URL = 'https://api.noroff.dev';
     const POSTS_API_URL = `${BASE_API_URL}/api/v1/social/posts/${id}`;
@@ -61,15 +65,13 @@ submitEditFormPost.addEventListener("click", async (event) => {
 });
 
 /**
- * Update a post on your profile
+ * Show a single post by the url query id, and show edit option if url has edit=1 query. 
  */
-
 async function main() {
-    const {id, edit}= getIdParam();
+    const {id, edit}= getQueryParams();
     const shouldEdit = edit === "1"; 
     const post = await fetchById(id);
     const { title, media, body } = post;
-    console.log(post);
     let postWrapper = document.getElementById('postWrapper');
     if (shouldEdit) {
         editPostForm.style.display = "block";
@@ -81,7 +83,6 @@ async function main() {
 
         const inputMedia = document.getElementById("inputMedia");
         inputMedia.value = media;
-        // return;
     }
     label.for = title;
     label.classList.add("form-label");
@@ -91,7 +92,6 @@ async function main() {
     img.alt = "Post";
     postWrapper.appendChild(label);
     postWrapper.appendChild(img);
-
 }
 
 main();

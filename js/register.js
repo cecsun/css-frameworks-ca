@@ -33,10 +33,10 @@ submitCreateProfileForm.addEventListener("click", async (event) => {
 }, true);
 
 /**
- * Register user
- * @param {*} url 
- * @param {*} data 
- * @returns 
+ * Registers a user 
+ * @param {string} url 
+ * @param {object} data 
+ * @returns request response/error
  */
 
 async function registerUser(url, data) {
@@ -53,21 +53,20 @@ async function registerUser(url, data) {
     const json = await response.json();
     return json;
   } catch (error) {
-    console.log(error);
+    return error;
   }
 }
 
 /**
- * Validation of name, email and password for a user to register
+ * Validates name, email and password of user registration form
+ * @returns True if all form values are valid
  */
-
 function validateCreateProfileForm() {
   let x = document.forms["create-profile"]["name"].value;
   if (x.length <= 5) {
     alert("Username must be more than 5 characters");
     return false;
   }
-  "cecsun"
 
   if (x.split(" ").length >= 2) {
     alert("Username cannot contain spaces ");
@@ -94,22 +93,20 @@ function validateCreateProfileForm() {
 }
 
 /**
- * The registered email cannot contain certain symbols
+ * Validates email to not contain certain symbols
  * @param {string} email 
- * @returns 
+ * @returns True if email is valid
  */
-
 function validateEmail(email) {
   const regex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
   return regex.test(email);
 }
 
 /**
- * The user needs to have a stud.noroff.no/noroff.no email
+ * Validates the email to be a stud.noroff.no or noroff.no email
  * @param {string} email 
- * @returns 
+ * @returns True if email is of type noroff
  */
-
 function validateNoroffEmail(email) {
   const validEmailDomains = ["stud.noroff.no", "noroff.no"];
   emailParts = email.split("@");
